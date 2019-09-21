@@ -48,7 +48,7 @@
     "type": "host"
   },
   "INTERNAL_URL_GRAPH": {
-    "value": "home-graph-service.microservices-namespace:4000/backend/graphql",
+    "value": "http://home-graph-service.microservices-namespace:4000/backend/graphql",
     "type": "url"
   },
   "INTERNAL_URL_EVENTS": {
@@ -56,7 +56,7 @@
     "type": "url"
   },
   "EXTERNAL_URL_GRAPH": {
-    "value": "www.repoflow.com/backend/graphql",
+    "value": "http://www.repoflow.com/backend/graphql",
     "type": "url"
   },
   "EXTERNAL_URL_EVENTS": {
