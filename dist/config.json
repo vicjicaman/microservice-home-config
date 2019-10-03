@@ -1,66 +1,46 @@
 {
-  "SERVICE_GRAPH": {
-    "value": "home-graph-service",
-    "type": "id"
-  },
-  "SERVICE_WEB": {
-    "value": "home-web-service",
-    "type": "id"
-  },
-  "DEPLOYMENT_GRAPH": {
-    "value": "home-graph-deployment",
-    "type": "id"
-  },
-  "DEPLOYMENT_WEB": {
-    "value": "home-web-deployment",
-    "type": "id"
-  },
-  "BASE_ROUTE": {
+  "HOME_BASE_ROUTE": {
     "value": "/",
     "type": "path"
   },
-  "BASE_ROUTE_APP": {
-    "value": "/",
-    "type": "path"
-  },
-  "BASE_ROUTE_BACKEND": {
+  "BACKEND_BASE_ROUTE": {
     "value": "/backend",
     "type": "path"
   },
-  "INTERNAL_PORT_APP": {
-    "value": 3000,
-    "type": "port"
+  "GRAPH_SERVICE_NAME": {
+    "value": "home-graph-service",
+    "type": "id"
   },
-  "ROUTE_GRAPH": {
+  "GRAPH_BASE_ROUTE": {
     "value": "/backend/graphql",
     "type": "route"
   },
-  "ROUTE_EVENTS": {
-    "value": "/backend/events",
-    "type": "route"
-  },
-  "INTERNAL_PORT_GRAPH": {
+  "GRAPH_INTERNAL_PORT": {
     "value": 4000,
     "type": "port"
   },
-  "INTERNAL_HOST_BACKEND": {
+  "WEB_SERVICE_NAME": {
+    "value": "home-web-service",
+    "type": "id"
+  },
+  "WEB_BASE_ROUTE": {
+    "value": "/",
+    "type": "path"
+  },
+  "WEB_INTERNAL_PORT": {
+    "value": 3000,
+    "type": "port"
+  },
+  "BACKEND_INTERNAL_HOST": {
     "value": "home-graph-service.microservices-namespace",
     "type": "host"
   },
-  "INTERNAL_URL_GRAPH": {
+  "GRAPH_INTERNAL_URL": {
     "value": "http://home-graph-service.microservices-namespace:4000/backend/graphql",
     "type": "url"
   },
-  "INTERNAL_URL_EVENTS": {
-    "value": "home-graph-service.microservices-namespace:4000/backend/events",
-    "type": "url"
-  },
-  "EXTERNAL_URL_GRAPH": {
-    "value": "http://www.repoflow.com/backend/graphql",
-    "type": "url"
-  },
-  "EXTERNAL_URL_EVENTS": {
-    "value": "www.repoflow.com/backend/events",
+  "GRAPH_EXTERNAL_URL": {
+    "value": "https://www.repoflow.com/backend/graphql",
     "type": "url"
   }
 }
