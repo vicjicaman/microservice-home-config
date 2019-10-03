@@ -2,87 +2,63 @@
   "dependencies": {
     "microservice-config": {
       "url": "github.com:vicjicaman/microservice-config.git",
-      "version": "1.70.1-master"
+      "version": "1.70.2-master"
     }
   },
-  "config": [ {
-      "name": "SERVICE_GRAPH",
-      "value": "home-graph-service",
-      "type": "id"
-    },
+  "config": [
     {
-      "name": "SERVICE_WEB",
-      "value": "home-web-service",
-      "type": "id"
-    },
-    {
-      "name": "DEPLOYMENT_GRAPH",
-      "value": "home-graph-deployment",
-      "type": "id"
-    },
-    {
-      "name": "DEPLOYMENT_WEB",
-      "value": "home-web-deployment",
-      "type": "id"
-    },
-    {
-      "name": "BASE_ROUTE",
+      "name": "HOME_BASE_ROUTE",
       "value": "/",
       "type": "path"
     },
     {
-      "name": "BASE_ROUTE_APP",
-      "value": "${BASE_ROUTE}",
+      "name": "BACKEND_BASE_ROUTE",
+      "value": "${HOME_BASE_ROUTE}backend",
       "type": "path"
     },
     {
-      "name": "BASE_ROUTE_BACKEND",
-      "value": "${BASE_ROUTE}backend",
-      "type": "path"
+      "name": "GRAPH_SERVICE_NAME",
+      "value": "home-graph-service",
+      "type": "id"
     },
     {
-      "name": "INTERNAL_PORT_APP",
-      "value": 3000,
-      "type": "port"
-    },
-    {
-      "name": "ROUTE_GRAPH",
-      "value": "${BASE_ROUTE_BACKEND}/graphql",
+      "name": "GRAPH_BASE_ROUTE",
+      "value": "${BACKEND_BASE_ROUTE}/graphql",
       "type": "route"
     },
     {
-      "name": "ROUTE_EVENTS",
-      "value": "${BASE_ROUTE_BACKEND}/events",
-      "type": "route"
-    },
-    {
-      "name": "INTERNAL_PORT_GRAPH",
+      "name": "GRAPH_INTERNAL_PORT",
       "value": 4000,
       "type": "port"
     },
     {
-      "name": "INTERNAL_HOST_BACKEND",
-      "value": "${SERVICE_GRAPH}.${NAMESPACE@microservice-config}",
+      "name": "WEB_SERVICE_NAME",
+      "value": "home-web-service",
+      "type": "id"
+    },
+    {
+      "name": "WEB_BASE_ROUTE",
+      "value": "${HOME_BASE_ROUTE}",
+      "type": "path"
+    },
+    {
+      "name": "WEB_INTERNAL_PORT",
+      "value": 3000,
+      "type": "port"
+    },
+    {
+      "name": "BACKEND_INTERNAL_HOST",
+      "value": "${GRAPH_SERVICE_NAME}.${NAMESPACE@microservice-config}",
       "type": "host"
     },
     {
-      "name": "INTERNAL_URL_GRAPH",
-      "value": "http://${INTERNAL_HOST_BACKEND}:${INTERNAL_PORT_GRAPH}${ROUTE_GRAPH}",
+      "name": "GRAPH_INTERNAL_URL",
+      "value": "${INTERNAL_PROTOCOL@microservice-config}://${BACKEND_INTERNAL_HOST}:${GRAPH_INTERNAL_PORT}${GRAPH_BASE_ROUTE}",
       "type": "url"
     },
     {
-      "name": "INTERNAL_URL_EVENTS",
-      "value": "${INTERNAL_HOST_BACKEND}:${INTERNAL_PORT_GRAPH}${ROUTE_EVENTS}",
-      "type": "url"
-    },
-    {
-      "name": "EXTERNAL_URL_GRAPH",
-      "value": "http://${HOST@microservice-config}${ROUTE_GRAPH}",
-      "type": "url"
-    },
-    {
-      "name": "EXTERNAL_URL_EVENTS",
-      "value": "${HOST@microservice-config}${ROUTE_EVENTS}",
+      "name": "GRAPH_EXTERNAL_URL",
+      "value": "${EXTERNAL_PROTOCOL@microservice-config}://${HOST@microservice-config}${GRAPH_BASE_ROUTE}",
       "type": "url"
     }
   ]
